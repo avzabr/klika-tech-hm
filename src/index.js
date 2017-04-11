@@ -1,13 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import store from "./store";
+import {Provider} from "react-redux";
+import "./index.css";
 
 
-console.log('test');
-
+const provider = (
+    <Provider store={store}>
+        <App/>
+    </Provider>
+);
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+    provider,
+    document.getElementById('root')
 );
