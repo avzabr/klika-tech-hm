@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import SongsTable from './SongsTable'
+import Filter from './Filter'
+import logo from '../data/logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -13,6 +15,8 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <Filter {...this.props}/>
+        <SongsTable {...this.props} />
       </div>
     );
   }

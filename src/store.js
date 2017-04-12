@@ -9,7 +9,12 @@ import rootReducer from "./reducers/index";
 
 
 const defaultState = {
-    songs
+    songs,
+    filter: {
+        selected_author: undefined,
+        selected_year: undefined,
+        selected_genre: undefined
+    }
 };
 
 const store = createStore(rootReducer, defaultState);

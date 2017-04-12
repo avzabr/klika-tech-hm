@@ -1,18 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import Main from "./components/Main";
 import store from "./store";
-import {Provider} from "react-redux";
+import { Provider } from "react-redux";
+
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
 import "./index.css";
 
-
-const provider = (
-    <Provider store={store}>
-        <App/>
-    </Provider>
-);
-
 ReactDOM.render(
-    provider,
+    <Provider store={store}>
+        <Main />
+    </Provider>,
     document.getElementById('root')
 );
