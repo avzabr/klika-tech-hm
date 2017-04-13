@@ -7,7 +7,7 @@ export function filterAuthor(author){
 
 export function filterYear(year){
     return {
-        type: 'FILTER_AUTHOR',
+        type: 'FILTER_YEAR',
         year
     }
 }

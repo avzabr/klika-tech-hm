@@ -7,9 +7,8 @@ import {createStore} from "redux";
 import songs from "./data/songs";
 import rootReducer from "./reducers/index";
 
-
-const defaultState = {
-    songs,
+export const initialState = {
+    songs: songs,
     filter: {
         selected_author: undefined,
         selected_year: undefined,
@@ -17,5 +16,5 @@ const defaultState = {
     }
 };
 
-const store = createStore(rootReducer, defaultState);
+const store = createStore(rootReducer, initialState);
 export default store;
