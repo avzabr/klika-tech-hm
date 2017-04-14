@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ButtonToolbar} from "react-bootstrap";
+import { ButtonToolbar } from "react-bootstrap";
 import Filter from './Filter'
 
 class FilterWrapper extends Component {
@@ -9,9 +9,11 @@ class FilterWrapper extends Component {
         const selected_genre = this.props.state.filter.selected_genre;
         const selected_year = this.props.state.filter.selected_year
 
-        const authors = this.props.state.songs.map((song)=> song.author).sort();
-        const genres = this.props.state.songs.map((song)=> song.genre).sort();
-        const years = this.props.state.songs.map((song)=> song.year).sort();
+        let uniq = a => [...new Set(a)];
+
+        const authors = uniq(this.props.state.songs.map((song) => song.author)).sort();
+        const genres = uniq(this.props.state.songs.map((song) => song.genre)).sort();
+        const years = uniq(this.props.state.songs.map((song) => song.year)).sort();
         return (
             <div >
                 <ButtonToolbar>
@@ -22,7 +24,6 @@ class FilterWrapper extends Component {
             </div>
         )
     }
-
 
 }
 

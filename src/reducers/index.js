@@ -4,9 +4,10 @@
 
 import {combineReducers} from "redux";
 import filter from "./filter";
+import songs from "./songs";
 
-const rootReducer = combineReducers({filter});
+const rootReducer = combineReducers({filter, songs});
 
 // export default rootReducer;
 
-export default filter;
+export default rootReducer;
