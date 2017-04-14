@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import SongsTable from './SongsTable'
-import FilterWrapper from './FilterWrapper'
-import logo from '../data/logo.svg';
-import './App.css';
+import React, {Component} from "react";
+import SongsTable from "./SongsTable";
+import FilterWrapper from "./FilterWrapper";
+import logo from "../data/logo.svg";
+import connect from "../util/connect";
+import "./App.css";
 
 class App extends Component {
   render() {
@@ -15,11 +16,11 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <FilterWrapper {...this.props}/>
-        <SongsTable {...this.props} />
+          <FilterWrapper {...this.props}/>
+          <SongsTable {...this.props} />
       </div>
     );
   }
 }
 
-export default App;
+export default connect(App);

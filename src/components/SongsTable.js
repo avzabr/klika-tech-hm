@@ -3,7 +3,13 @@ import React, {Component} from "react";
 class SongsTable extends Component {
 
     render() {
-        const filtered_songs = this.props.state.filter.songs;
+        const filter = this.props.state.filter;
+        const filtered_songs = this.props.state.songs
+            .filter((song) => {
+                return (filter.selected_author ? song.author === filter.selected_author : true) &&
+                    (filter.selected_genre ? song.genre === filter.selected_genre : true) &&
+                    (filter.selected_year ? song.year === filter.selected_year : true)
+            });
         const output = (filtered_songs.length > 0 ? JSON.stringify(filtered_songs, null, ' ') : "No songs matching filter criteria");
 
         return (
@@ -15,8 +21,6 @@ class SongsTable extends Component {
         )
     }
 
-
 }
-;
 
 export default SongsTable;

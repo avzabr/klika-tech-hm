@@ -8,6 +8,4 @@ import songs from "./songs";
 
 const rootReducer = combineReducers({filter, songs});
 
-// export default rootReducer;
-
 export default rootReducer;

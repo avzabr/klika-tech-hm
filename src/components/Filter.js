@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import { DropdownButton, MenuItem } from "react-bootstrap";
+import React, {Component} from "react";
+import {DropdownButton, MenuItem} from "react-bootstrap";
 
 class Filter extends Component {
 
     render() {
-        const itemName = this.props.itemName
+        const itemName = this.props.itemName;
         const title = 'Filter by ' + itemName;
         const items = this.props.items.map((item) => {
             return <MenuItem key={item} eventKey={item}
-                active={this.props.selected_item === item}>{item}</MenuItem>
-        })
+                             active={this.props.selected_item === item}>{item}</MenuItem>
+        });
         return (
             <DropdownButton bsSize="small"
                 title={this.props.selected_item ? this.props.selected_item : title}
