@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {BootstrapTable, TableHeaderColumn} from "react-bootstrap-table";
 
 class SongsTable extends Component {
 
@@ -10,14 +11,14 @@ class SongsTable extends Component {
                     (filter.selected_genre ? song.genre === filter.selected_genre : true) &&
                     (filter.selected_year ? song.year === filter.selected_year : true)
             });
-        const output = (filtered_songs.length > 0 ? JSON.stringify(filtered_songs, null, ' ') : "No songs matching filter criteria");
 
         return (
-            <div className="songs-table">
-                <pre>
-                    {output}
-                </pre>
-            </div>
+            <BootstrapTable data={filtered_songs} keyField='id' striped={true} hover={true} pagination>
+                <TableHeaderColumn dataField="author" dataSort={true}>Author</TableHeaderColumn>
+                <TableHeaderColumn dataField="name" dataSort={true}>Song</TableHeaderColumn>
+                <TableHeaderColumn dataField="genre" dataSort={true}>Genre</TableHeaderColumn>
+                <TableHeaderColumn dataField="year" dataSort={true}>Year</TableHeaderColumn>
+            </BootstrapTable>
         )
     }
 

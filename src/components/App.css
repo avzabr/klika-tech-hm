@@ -22,3 +22,12 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.filter-wrapper .dropdown.btn-group {
+    padding-bottom: 10px;
+    margin-left: 15px;
+}
+
+.filter-wrapper .dropdown.btn-group button {
+    min-width: 150px;
+}

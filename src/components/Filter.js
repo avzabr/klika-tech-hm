@@ -12,10 +12,12 @@ class Filter extends Component {
         });
         return (
             <DropdownButton bsSize="small"
-                title={this.props.selected_item ? this.props.selected_item : title}
-                id="filter-{this.props.itemName}" onSelect={this.props.filterFunction}>
+                            title={this.props.selected_item ? this.props.selected_item : title}
+                            id={"filter-" + itemName}
+                            onSelect={this.props.filterFunction}
+                            className="filter-btn">
                 {items}
-                <MenuItem divider />
+                <MenuItem divider/>
                 <MenuItem key={'CLEAR'} eventKey={'CLEAR'}>Clear</MenuItem>
             </DropdownButton>
         )

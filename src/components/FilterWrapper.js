@@ -16,7 +16,7 @@ class FilterWrapper extends Component {
         const years = uniq(this.props.state.songs.map((song) => song.year)).sort();
 
         return (
-            <div >
+            <div className="filter-wrapper">
                 <ButtonToolbar>
                     <Filter itemName='Author' items={authors} selected_item={selected_author}
                             filterFunction={this.props.filterAuthor}/>
