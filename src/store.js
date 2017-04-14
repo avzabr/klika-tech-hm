@@ -12,7 +12,8 @@ export const initialState = {
     filter: {
         selected_author: undefined,
         selected_year: undefined,
-        selected_genre: undefined
+        selected_genre: undefined,
+        songs
     }
 };
 

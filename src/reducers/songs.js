@@ -1,5 +1,3 @@
-// import {initialState} from "../store";
-
 function songs(songs = [], action) {
     switch (action.type) {
         default:
